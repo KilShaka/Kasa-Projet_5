@@ -1,0 +1,62 @@
+.summary-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.summary {
+  width: 1023px;
+  border-radius: 5px;
+  overflow: hidden;
+  @include respond-to("Laptop") {
+    width: 90vw;
+  }
+  &__title {
+    border-radius: 5px;
+    background-color: #ff6060;
+    height: 52px;
+    font-weight: 700;
+    font-size: 24px;
+    color: white;
+    list-style: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__arrow {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+  }
+  &__content {
+    background-color: #f6f6f6;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-size: 18px;
+    transition: all 0.3s ease-out;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  &.is-open {
+    .summary__arrow {
+      transform: rotate(180deg);
+    }
+    .summary__content {
+      max-height: 1000px;
+      opacity: 1;
+      transform: translateY(0);
+      padding: 15px;
+      position: relative;
+      z-index: -2;
+    }
+  }
+}

@@ -1,9 +1,19 @@
-import Navbar from "../components/common/Navbar";
+import Rentings from "../components/ui/Rentings";
+import Banner from "../components/ui/Banner";
+import falaises from "../assets/images/falaises.png";
 
 function Home() {
   return (
     <div>
-      <Navbar />
+      <Banner
+        backgroundImage={falaises}
+        text={
+          <>
+            Chez vous, <span className="move-down">partout et ailleurs</span>
+          </>
+        }
+      />
+      <Rentings />
     </div>
   );
 }

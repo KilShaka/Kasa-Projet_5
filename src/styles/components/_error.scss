@@ -1,0 +1,42 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 100px;
+  margin-top: 55px;
+  &__numbers {
+    color: #ff6060;
+    font-size: 288px;
+    @include respond-to("Laptop") {
+      font-size: 25vh;
+    }
+    @include respond-to("Tablet") {
+      font-size: 20vh;
+    }
+    @include respond-to("Mobile") {
+      font-size: 96px;
+    }
+  }
+  &__text {
+    font-size: 36px;
+    color: #ff6060;
+    font-weight: 500;
+    text-align: center;
+    @include respond-to("Mobile") {
+      font-size: 18px;
+      margin-top: 50px;
+    }
+  }
+  &__toHome {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+    margin-top: 90px;
+    cursor: pointer;
+    @include respond-to("Mobile") {
+      font-size: 14px;
+    }
+  }
+}

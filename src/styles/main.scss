@@ -1,6 +1,12 @@
 // Components
+@import "reset";
 @import "variables";
 @import "fonts/fonts";
 @import "components/navbar";
 @import "components/mainWrapper";
+@import "components/summaryElement";
+@import "components/error";
+@import "components/banner";
+@import "components/rentings";
+@import "components/footer";
 @import "pages/app";
