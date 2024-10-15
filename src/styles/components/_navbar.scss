@@ -1,0 +1,46 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    width: 210.32px;
+    height: 68px;
+    @include respond-to("Tablet") {
+      width: 145px;
+      height: 46.88px;
+    }
+  }
+  &__links {
+    display: flex;
+    gap: 57px;
+    list-style: none;
+    @include respond-to("Tablet") {
+      gap: 30px;
+    }
+    @include respond-to("Mobile") {
+      gap: 26px;
+    }
+    & a {
+      text-decoration: none;
+      color: black;
+      font-size: 24px;
+      white-space: nowrap;
+      font-weight: 500;
+
+      &.active {
+        text-decoration: underline;
+      }
+      @include respond-to("Tablet") {
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+      @include respond-to("Mobile") {
+        font-size: 12px;
+      }
+    }
+
+    &:visited {
+      color: inherit;
+    }
+  }
+}

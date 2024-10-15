@@ -1,0 +1,15 @@
+$breakpoints: (
+  "Mobile": 375px,
+  "Tablet": 768px,
+  "Laptop": 1024px,
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}.";
+  }
+}

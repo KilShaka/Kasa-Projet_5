@@ -1,0 +1,12 @@
+.main-wrapper {
+  max-width: 1240px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 35px;
+  @include respond-to("Laptop") {
+    max-width: 90vw;
+  }
+  @include respond-to("Mobile") {
+    max-width: 335px;
+  }
+}
