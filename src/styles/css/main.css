@@ -328,6 +328,8 @@ body {
     text-align: left;
     padding-left: 20px;
     text-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
 }
 
@@ -338,11 +340,89 @@ body {
 }
 
 .rentings-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
   border-radius: 25px;
   min-height: 100px;
   width: 100%;
   background-color: #f6f6f6;
   margin-top: 45px;
+  margin-bottom: 45px;
+  padding: 50px;
+  gap: 40px;
+}
+@media (max-width: 1024px) {
+  .rentings-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .rentings-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 375px) {
+  .rentings-wrapper {
+    padding: 0;
+    background-color: transparent;
+    gap: 20px;
+    margin-top: 20px;
+  }
+}
+
+.rentings-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+@media (max-width: 375px) {
+  .rentings-card {
+    aspect-ratio: auto;
+  }
+}
+.rentings-card img {
+  width: 100%;
+  height: 100%;
+  max-width: 340px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+@media (max-width: 768px) {
+  .rentings-card img {
+    max-width: 600px;
+  }
+}
+@media (max-width: 375px) {
+  .rentings-card img {
+    max-width: 335px;
+    max-height: 255px;
+  }
+}
+.rentings-card__image-container {
+  position: relative;
+}
+.rentings-card__title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .rentings-card__title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .rentings-card__title {
+    font-size: 16px;
+    text-align: justify;
+  }
 }
 
 .footer {
