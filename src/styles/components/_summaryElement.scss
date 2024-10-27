@@ -3,9 +3,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   margin-bottom: 20px;
   margin-top: 30px;
+  @include respond-to("Tablet") {
+    margin-top: 25px;
+  }
+  @include respond-to("Mobile") {
+    margin-top: 20px;
+  }
 }
 
 .summary {
@@ -15,6 +21,9 @@
   @include respond-to("Laptop") {
     width: 90vw;
   }
+  // @include respond-to("Mobile") {
+  //   width: auto;
+  // }
   &__title {
     border-radius: 5px;
     background-color: #ff6060;
@@ -29,11 +38,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include respond-to("Tablet") {
+      font-size: 20px;
+    }
+    @include respond-to("Mobile") {
+      height: 30px;
+      font-size: 13px;
+      padding: 15px 10px;
+    }
   }
   &__arrow {
     width: 32px;
     height: 32px;
     transition: transform 0.3s ease;
+    @include respond-to("Tablet") {
+      width: 28px;
+      height: 28px;
+    }
+    @include respond-to("Mobile") {
+      width: 22px;
+      height: 22px;
+    }
   }
   &__content {
     background-color: #f6f6f6;
@@ -45,6 +70,9 @@
     max-height: 0;
     opacity: 0;
     transform: translateY(-30px);
+    @include respond-to("Mobile") {
+      font-size: 12px;
+    }
   }
   &.is-open {
     .summary__arrow {

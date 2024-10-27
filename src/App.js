@@ -6,6 +6,7 @@ import "./styles/css/main.css";
 import MainWrapper from "./components/common/MainWrapper";
 import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
+import RentingPage from "./pages/RentingPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/renting/:id" element={<RentingPage />} />
           <Route path="/About" element={<About />} />
           <Route path="*" element={<Error />} />
         </Routes>

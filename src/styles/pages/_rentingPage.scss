@@ -1,0 +1,149 @@
+.rentingInfo-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  @include respond-to("LaptopM") {
+    padding: 0 30px;
+  }
+  @include respond-to("Laptop") {
+    flex-direction: column;
+  }
+  @include respond-to("Mobile") {
+    padding: 0 10px;
+  }
+}
+
+.renting__title {
+  font-size: 36px;
+  color: #ff6060;
+  font-weight: 500;
+  @include respond-to("Laptop") {
+    font-size: 26px;
+  }
+}
+
+.renting__figcaption {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+// HOST
+.host-picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.host-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ff6060;
+  text-align: right;
+}
+
+.move-down {
+  display: block;
+}
+.host-name-and-picture-container {
+  display: flex;
+  gap: 20px;
+}
+.host-and-stars-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  @include respond-to("Tablet") {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+  }
+  @include respond-to("Mobile") {
+    flex-direction: row-reverse;
+  }
+}
+
+//MODIFIER LA TAILLER DE MES SUMMARY ELEMENT
+// Pour cela on imbrique .summary dans .renting-page pour augmenter la spécificité et empêcher que .summary soit affecté dans toute l'appli
+.renting-page {
+  //AJOUT **********************
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include respond-to("LaptopM") {
+    .banner {
+      width: 95%;
+      max-height: 350px;
+    }
+  }
+  @include respond-to("Tablet") {
+    .banner {
+      max-height: 300px;
+    }
+  }
+
+  .summary {
+    max-width: 582px;
+    // width: 40vw;
+    @include respond-to("LaptopM") {
+      max-width: 45vw;
+    }
+    @include respond-to("Laptop") {
+      max-width: 85vw;
+    }
+  }
+}
+
+.renting-page {
+  .summary-container {
+    width: auto;
+  }
+  .summary.is-open .summary__content {
+    padding: 20px;
+  }
+  .summary.is-open .summary__content ul {
+    list-style: none;
+  }
+}
+
+.summary-wrapper {
+  display: flex;
+  justify-content: space-between;
+  // gap: 70px;
+  margin-bottom: 30px;
+  width: 100%;
+  @include respond-to("Laptop") {
+    display: block;
+  }
+  @include respond-to("LaptopM") {
+    width: 95%;
+  }
+  // justify-self: center;
+}
+
+//MODIFIER LA TAILLER DE MON BANNER. JE créé RENTING-PAGE qui enbloge tout mon contenu pour augmenter la spécificité de .banner. Car si je mets .banner seul il n'y a aucune modification car le fichier scss propre à banner prend le dessus
+
+.renting-page {
+  .banner {
+    height: 415px;
+    box-shadow: none;
+    margin-bottom: 30px;
+  }
+}
+
+//ETOILES
+.stars {
+  display: flex;
+  & img {
+    height: 36px;
+    width: 36px;
+    @include respond-to("Tablet") {
+      height: 28px;
+      width: 28px;
+    }
+    @include respond-to("Mobile") {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
