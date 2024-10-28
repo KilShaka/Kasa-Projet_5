@@ -528,21 +528,27 @@ body {
 }
 
 .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 25px;
   background-color: #ff6060;
   border-radius: 10px;
   color: white;
   font-size: 14px;
-  text-align: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
   font-weight: 700;
   padding: 0 10px;
 }
 @media (max-width: 375px) {
   .tag {
     height: 18px;
-    width: 84px;
+    font-size: 10px;
   }
 }
 
@@ -552,6 +558,8 @@ body {
   display: flex;
   gap: 15px;
   margin-top: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .banner {

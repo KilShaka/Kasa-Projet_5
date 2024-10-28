@@ -22,20 +22,23 @@ function RentingPage() {
       try {
         const data = await fetchRentalListing();
         const selectedRenting = data.find((item) => item.id === id);
-        // MISE A JOUR DU STATE
-        setRenting(selectedRenting);
+        if (!selectedRenting) {
+          navigate("/error");
+          // MISE A JOUR DU STATE
+        } else {
+          setRenting(selectedRenting);
+        }
       } catch (error) {
         console.error("Échec du chargement des détails de la location:", error);
       }
     };
 
     loadRenting();
-  }, [id]); // A CHAQUE CHANGEMENT DE L'ID L'EFFET SE DECLENCHE
+  }, [id, navigate]); // A CHAQUE CHANGEMENT DE L'ID L'EFFET SE DECLENCHE
 
   // MESSAGE D'ERREUR
   if (!renting) {
-    navigate("/error");
-    return;
+    return <div>Chargement en cours...</div>;
   }
 
   // RENDER
