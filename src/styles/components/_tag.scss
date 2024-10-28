@@ -2,20 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 115px;
+  min-width: 80px;
   height: 25px;
   background-color: #ff6060;
   border-radius: 10px;
   color: white;
   font-size: 14px;
-  // text-align: center;
-  // align-content: center;
   font-weight: 700;
   padding: 0 10px;
   @include respond-to("Mobile") {
     height: 18px;
     font-size: 10px;
-    // width: 84px;
   }
 }
 

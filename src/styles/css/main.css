@@ -141,7 +141,7 @@ body {
   }
 }
 
-.summary-container {
+.collapse-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -157,27 +157,37 @@ body {
   margin-top: 30px;
 }
 @media (max-width: 768px) {
-  .summary-container {
+  .collapse-container {
     margin-top: 25px;
   }
 }
 @media (max-width: 375px) {
-  .summary-container {
+  .collapse-container {
     margin-top: 20px;
   }
 }
 
-.summary {
+.collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: 1023px;
   border-radius: 5px;
   overflow: hidden;
 }
 @media (max-width: 1024px) {
-  .summary {
+  .collapse {
     width: 90vw;
   }
 }
-.summary__title {
+.collapse__title {
   border-radius: 5px;
   background-color: #ff6060;
   height: 52px;
@@ -185,7 +195,6 @@ body {
   font-size: 24px;
   color: white;
   list-style: none;
-  cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 15px;
@@ -200,18 +209,21 @@ body {
           align-items: center;
 }
 @media (max-width: 768px) {
-  .summary__title {
+  .collapse__title {
     font-size: 20px;
   }
 }
 @media (max-width: 375px) {
-  .summary__title {
+  .collapse__title {
     height: 30px;
     font-size: 13px;
     padding: 15px 10px;
   }
 }
-.summary__arrow {
+.collapse__title img {
+  cursor: pointer;
+}
+.collapse__arrow {
   width: 32px;
   height: 32px;
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -220,18 +232,18 @@ body {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 @media (max-width: 768px) {
-  .summary__arrow {
+  .collapse__arrow {
     width: 28px;
     height: 28px;
   }
 }
 @media (max-width: 375px) {
-  .summary__arrow {
+  .collapse__arrow {
     width: 22px;
     height: 22px;
   }
 }
-.summary__content {
+.collapse__content {
   background-color: #f6f6f6;
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -241,27 +253,31 @@ body {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   max-height: 0;
+  visibility: hidden;
   opacity: 0;
-  -webkit-transform: translateY(-30px);
-          transform: translateY(-30px);
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.collapse__content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 @media (max-width: 375px) {
-  .summary__content {
+  .collapse__content {
     font-size: 12px;
   }
 }
-.summary.is-open .summary__arrow {
+.collapse.is-open .collapse__arrow {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.summary.is-open .summary__content {
+.collapse.is-open .collapse__content {
   max-height: 1000px;
+  visibility: visible;
   opacity: 1;
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
   padding: 15px;
-  position: relative;
-  z-index: -2;
 }
 
 .rentingInfo-wrapper {
@@ -391,31 +407,28 @@ body {
     max-height: 300px;
   }
 }
-.renting-page .summary {
+.renting-page .collapse {
   max-width: 582px;
 }
 @media (max-width: 1260px) {
-  .renting-page .summary {
+  .renting-page .collapse {
     max-width: 45vw;
   }
 }
 @media (max-width: 1024px) {
-  .renting-page .summary {
+  .renting-page .collapse {
     max-width: 85vw;
   }
 }
 
-.renting-page .summary-container {
+.renting-page .collapse-container {
   width: auto;
 }
-.renting-page .summary.is-open .summary__content {
-  padding: 20px;
-}
-.renting-page .summary.is-open .summary__content ul {
+.renting-page .collapse.is-open .collapse__content ul {
   list-style: none;
 }
 
-.summary-wrapper {
+.collapse-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -426,12 +439,12 @@ body {
   width: 100%;
 }
 @media (max-width: 1024px) {
-  .summary-wrapper {
+  .collapse-wrapper {
     display: block;
   }
 }
 @media (max-width: 1260px) {
-  .summary-wrapper {
+  .collapse-wrapper {
     width: 95%;
   }
 }
@@ -537,6 +550,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-width: 80px;
   height: 25px;
   background-color: #ff6060;
   border-radius: 10px;

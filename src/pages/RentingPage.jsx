@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchRentalListing } from "../services/api";
-import SummaryElement from "../components/ui/SummaryElement";
+import Collapse from "../components/ui/Collapse";
 import Banner from "../components/ui/Banner";
 import Tag from "../components/ui/Tag";
 import starActive from "../assets/images/icons/star-active.svg";
@@ -100,9 +100,9 @@ function RentingPage() {
       </div>
 
       {/* DESCRIPTION ET EQUIPEMENTS */}
-      <div className="summary-wrapper">
-        <SummaryElement title="Description" content={renting.description} />
-        <SummaryElement
+      <div className="collapse-wrapper">
+        <Collapse title="Description" content={renting.description} />
+        <Collapse
           title="Équipements"
           content={
             <ul>

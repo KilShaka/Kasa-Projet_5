@@ -63,8 +63,8 @@
   }
 }
 
-//MODIFIER LA TAILLER DE MES SUMMARY ELEMENT
-// Pour cela on imbrique .summary dans .renting-page pour augmenter la spécificité et empêcher que .summary soit affecté dans toute l'appli
+//MODIFIER LA TAILLER DE MES COLLAPSE ELEMENT
+// Pour cela on imbrique .collapse dans .renting-page pour augmenter la spécificité et empêcher que .collapse soit affecté dans toute l'appli
 .renting-page {
   //AJOUT **********************
   display: flex;
@@ -82,7 +82,7 @@
     }
   }
 
-  .summary {
+  .collapse {
     max-width: 582px;
     // width: 40vw;
     @include respond-to("LaptopM") {
@@ -95,18 +95,16 @@
 }
 
 .renting-page {
-  .summary-container {
+  .collapse-container {
     width: auto;
   }
-  .summary.is-open .summary__content {
-    padding: 20px;
-  }
-  .summary.is-open .summary__content ul {
+
+  .collapse.is-open .collapse__content ul {
     list-style: none;
   }
 }
 
-.summary-wrapper {
+.collapse-wrapper {
   display: flex;
   justify-content: space-between;
   // gap: 70px;

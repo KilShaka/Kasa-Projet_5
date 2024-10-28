@@ -1,9 +1,8 @@
-.summary-container {
+.collapse-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: center;
   margin-bottom: 20px;
   margin-top: 30px;
   @include respond-to("Tablet") {
@@ -14,16 +13,17 @@
   }
 }
 
-.summary {
+.collapse {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   width: 1023px;
   border-radius: 5px;
   overflow: hidden;
   @include respond-to("Laptop") {
     width: 90vw;
   }
-  // @include respond-to("Mobile") {
-  //   width: auto;
-  // }
+
   &__title {
     border-radius: 5px;
     background-color: #ff6060;
@@ -32,7 +32,6 @@
     font-size: 24px;
     color: white;
     list-style: none;
-    cursor: pointer;
     box-sizing: border-box;
     padding: 15px;
     display: flex;
@@ -46,7 +45,11 @@
       font-size: 13px;
       padding: 15px 10px;
     }
+    & img {
+      cursor: pointer;
+    }
   }
+
   &__arrow {
     width: 32px;
     height: 32px;
@@ -60,6 +63,7 @@
       height: 22px;
     }
   }
+
   &__content {
     background-color: #f6f6f6;
     width: 100%;
@@ -68,23 +72,31 @@
     font-size: 18px;
     transition: all 0.3s ease-out;
     max-height: 0;
+    visibility: hidden;
     opacity: 0;
-    transform: translateY(-30px);
+    flex: 1;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
     @include respond-to("Mobile") {
       font-size: 12px;
     }
   }
+
   &.is-open {
-    .summary__arrow {
+    .collapse__arrow {
       transform: rotate(180deg);
     }
-    .summary__content {
+
+    .collapse__content {
       max-height: 1000px;
+      visibility: visible;
       opacity: 1;
-      transform: translateY(0);
       padding: 15px;
-      position: relative;
-      z-index: -2;
     }
   }
 }
