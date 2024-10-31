@@ -10,6 +10,7 @@
   font-size: 14px;
   font-weight: 700;
   padding: 0 10px;
+
   @include respond-to("Mobile") {
     height: 18px;
     font-size: 10px;
@@ -21,4 +22,11 @@
   gap: 15px;
   margin-top: 20px;
   flex-wrap: wrap;
+  @include respond-to("Tablet") {
+    justify-content: flex-end;
+  }
+  @include respond-to("Mobile") {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
 }

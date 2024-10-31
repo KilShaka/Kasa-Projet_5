@@ -137,7 +137,7 @@ body {
 }
 @media (max-width: 375px) {
   .main-wrapper {
-    max-width: 335px;
+    max-width: 95vw;
   }
 }
 
@@ -291,7 +291,7 @@ body {
 }
 @media (max-width: 1260px) {
   .rentingInfo-wrapper {
-    padding: 0 30px;
+    padding: 0 18px;
   }
 }
 @media (max-width: 1024px) {
@@ -304,7 +304,7 @@ body {
 }
 @media (max-width: 375px) {
   .rentingInfo-wrapper {
-    padding: 0 10px;
+    padding: 0 5px;
   }
 }
 
@@ -318,10 +318,20 @@ body {
     font-size: 26px;
   }
 }
+@media (max-width: 375px) {
+  .renting__title {
+    font-size: 18px;
+  }
+}
 
 .renting__figcaption {
   font-size: 18px;
   font-weight: 500;
+}
+@media (max-width: 375px) {
+  .renting__figcaption {
+    font-size: 14px;
+  }
 }
 
 .host-picture {
@@ -329,12 +339,23 @@ body {
   height: 64px;
   border-radius: 50%;
 }
+@media (max-width: 375px) {
+  .host-picture {
+    width: 32px;
+    height: 32px;
+  }
+}
 
 .host-name {
   font-size: 18px;
   font-weight: 500;
   color: #ff6060;
   text-align: right;
+}
+@media (max-width: 375px) {
+  .host-name {
+    font-size: 12px;
+  }
 }
 
 .move-down {
@@ -346,6 +367,14 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+}
+@media (max-width: 375px) {
+  .host-name-and-picture-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 10px;
+  }
 }
 
 .host-and-stars-container {
@@ -363,6 +392,11 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+@media (max-width: 1260px) {
+  .host-and-stars-container {
+    gap: 5px;
+  }
+}
 @media (max-width: 768px) {
   .host-and-stars-container {
     -webkit-box-orient: horizontal;
@@ -373,6 +407,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     margin-top: 30px;
+    gap: 0;
   }
 }
 @media (max-width: 375px) {
@@ -381,6 +416,8 @@ body {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    margin-top: 15px;
+    gap: 0;
   }
 }
 
@@ -420,6 +457,11 @@ body {
     max-width: 85vw;
   }
 }
+@media (max-width: 375px) {
+  .renting-page .collapse {
+    max-width: 90vw;
+  }
+}
 
 .renting-page .collapse-container {
   width: auto;
@@ -454,6 +496,11 @@ body {
   -webkit-box-shadow: none;
           box-shadow: none;
   margin-bottom: 30px;
+}
+@media (max-width: 375px) {
+  .renting-page .banner {
+    margin-bottom: 10px;
+  }
 }
 
 .stars {
@@ -528,6 +575,7 @@ body {
   }
 }
 .error__toHome {
+  color: black;
   font-size: 18px;
   font-weight: 500;
   text-decoration: underline;
@@ -574,6 +622,21 @@ body {
   margin-top: 20px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .tag-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+@media (max-width: 375px) {
+  .tag-container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 10px;
+  }
 }
 
 .banner {
@@ -626,7 +689,7 @@ body {
 }
 @media (max-width: 375px) {
   .banner.banner-carousel {
-    width: 335px;
+    width: 91vw;
     height: 255px;
   }
 }
@@ -649,12 +712,34 @@ body {
 .banner.banner-carousel .chevron-left {
   left: 20px;
 }
+@media (max-width: 375px) {
+  .banner.banner-carousel .chevron-left {
+    width: 15px;
+    height: 15px;
+  }
+}
 .banner.banner-carousel .chevron-right {
   right: 20px;
 }
+@media (max-width: 375px) {
+  .banner.banner-carousel .chevron-right {
+    width: 15px;
+    height: 15px;
+  }
+}
 .banner.banner-carousel .chevron img {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+}
+@media (max-width: 768px) {
+  .banner.banner-carousel .chevron img {
+    width: 40px;
+  }
+}
+@media (max-width: 375px) {
+  .banner.banner-carousel .chevron img {
+    width: 30px;
+    height: 30px;
+  }
 }
 .banner.banner-carousel .slide-counter {
   position: absolute;
@@ -664,6 +749,13 @@ body {
           transform: translateX(-50%);
   color: white;
   font-size: 18px;
+  text-shadow: 1px 2px 4px #1e1d1d;
+  font-weight: 500;
+}
+@media (max-width: 375px) {
+  .banner.banner-carousel .slide-counter {
+    display: none;
+  }
 }
 
 @media (max-width: 375px) {

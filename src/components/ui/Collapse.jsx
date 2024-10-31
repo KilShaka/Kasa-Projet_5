@@ -4,7 +4,7 @@ import arrowUp from "../../assets/images/icons/arrow-up.svg";
 function Collapse({ title, content }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleOpen = (e) => {
+  const toggleOpen = () => {
     setIsOpen(!isOpen);
   };
 

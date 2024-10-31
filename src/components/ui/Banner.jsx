@@ -8,16 +8,16 @@ function Banner({ text, backgroundImage, images, isCarousel = false }) {
   // LOGIQUE
   const next = () => {
     if (images && images.length > 1) {
-      setIndexActuel((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      setIndexActuel((currentIndex) =>
+        currentIndex === images.length - 1 ? 0 : currentIndex + 1
       );
     }
   };
 
   const prev = () => {
     if (images && images.length > 1) {
-      setIndexActuel((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      setIndexActuel((currentIndex) =>
+        currentIndex === 0 ? images.length - 1 : currentIndex - 1
       );
     }
   };

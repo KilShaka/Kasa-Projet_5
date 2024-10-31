@@ -3,13 +3,13 @@
   justify-content: space-between;
   width: 100%;
   @include respond-to("LaptopM") {
-    padding: 0 30px;
+    padding: 0 18px;
   }
   @include respond-to("Laptop") {
     flex-direction: column;
   }
   @include respond-to("Mobile") {
-    padding: 0 10px;
+    padding: 0 5px;
   }
 }
 
@@ -20,11 +20,17 @@
   @include respond-to("Laptop") {
     font-size: 26px;
   }
+  @include respond-to("Mobile") {
+    font-size: 18px;
+  }
 }
 
 .renting__figcaption {
   font-size: 18px;
   font-weight: 500;
+  @include respond-to("Mobile") {
+    font-size: 14px;
+  }
 }
 
 // HOST
@@ -32,6 +38,10 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
+  @include respond-to("Mobile") {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .host-name {
@@ -39,6 +49,9 @@
   font-weight: 500;
   color: #ff6060;
   text-align: right;
+  @include respond-to("Mobile") {
+    font-size: 12px;
+  }
 }
 
 .move-down {
@@ -47,26 +60,35 @@
 .host-name-and-picture-container {
   display: flex;
   gap: 20px;
+  @include respond-to("Mobile") {
+    align-items: center;
+    gap: 10px;
+  }
 }
 .host-and-stars-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+  @include respond-to("LaptopM") {
+    gap: 5px;
+  }
   @include respond-to("Tablet") {
     flex-direction: row;
     align-items: center;
     margin-top: 30px;
+    gap: 0;
   }
   @include respond-to("Mobile") {
     flex-direction: row-reverse;
+    margin-top: 15px;
+    gap: 0;
   }
 }
 
 //MODIFIER LA TAILLER DE MES COLLAPSE ELEMENT
 // Pour cela on imbrique .collapse dans .renting-page pour augmenter la spécificité et empêcher que .collapse soit affecté dans toute l'appli
 .renting-page {
-  //AJOUT **********************
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,12 +106,14 @@
 
   .collapse {
     max-width: 582px;
-    // width: 40vw;
     @include respond-to("LaptopM") {
       max-width: 45vw;
     }
     @include respond-to("Laptop") {
       max-width: 85vw;
+    }
+    @include respond-to("Mobile") {
+      max-width: 90vw;
     }
   }
 }
@@ -116,7 +140,6 @@
   @include respond-to("LaptopM") {
     width: 95%;
   }
-  // justify-self: center;
 }
 
 //MODIFIER LA TAILLER DE MON BANNER. JE créé RENTING-PAGE qui enbloge tout mon contenu pour augmenter la spécificité de .banner. Car si je mets .banner seul il n'y a aucune modification car le fichier scss propre à banner prend le dessus
@@ -126,6 +149,9 @@
     height: 415px;
     box-shadow: none;
     margin-bottom: 30px;
+    @include respond-to("Mobile") {
+      margin-bottom: 10px;
+    }
   }
 }
 

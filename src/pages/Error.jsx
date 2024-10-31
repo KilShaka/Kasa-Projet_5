@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 function Error() {
   return (
     <div className="error">
@@ -6,7 +8,9 @@ function Error() {
         Oups! La page que{" "}
         <span className="move-down">vous demandez n'existe pas.</span>
       </p>
-      <p className="error__toHome">Retourner sur la page d'accueil</p>
+      <NavLink to="/">
+        <p className="error__toHome">Retourner sur la page d'accueil</p>
+      </NavLink>
     </div>
   );
 }

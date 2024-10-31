@@ -34,7 +34,7 @@ function RentingPage() {
     };
 
     loadRenting();
-  }, [id, navigate]); // A CHAQUE CHANGEMENT DE L'ID L'EFFET SE DECLENCHE
+  }, [id, navigate]); // A CHAQUE CHANGEMENT DE L'ID L'EFFET SE DECLENCHE + CONVENTION REACT = inclure les dépendances externes utilisées dans l'effet pour éviter les bugs
 
   // MESSAGE D'ERREUR
   if (!renting) {

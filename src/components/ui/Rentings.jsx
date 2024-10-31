@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { fetchRentalListing } from "../../services/api";
 import React, { useState, useEffect } from "react";
 import RentingCard from "./RentingCard";
